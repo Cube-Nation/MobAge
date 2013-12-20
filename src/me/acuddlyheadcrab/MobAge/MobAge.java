@@ -24,7 +24,6 @@ public class MobAge extends JavaPlugin {
     private File whitelistConfigurationFile = null;
     public static PluginDescriptionFile pdf;
     
-    public final MobListener entityListener = new MobListener(this);
     public final PluginIO sendPluginInfo = new PluginIO(this);
     public final KillOldMobs killOldMobstask = new KillOldMobs(this);
     
@@ -33,7 +32,6 @@ public class MobAge extends JavaPlugin {
     @Override
     public void onEnable() {
         pdf = getDescription();
-        getServer().getPluginManager().registerEvents(entityListener, this);
         loadConfig();
         loadWhitelist();
         saveWhitelist();
