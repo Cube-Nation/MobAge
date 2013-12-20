@@ -48,6 +48,7 @@ public class PluginIO{
 			sendPluginInfo("	ANIMALS:");
 			sendPluginInfo("		Chicken: "+getWLKey("Animals", "Chicken", "spawn"));
 			sendPluginInfo("		Cow: "+getWLKey("Animals", "Cow", "spawn"));
+            sendPluginInfo("        Horse: "+getWLKey("Animals", "Horse", "spawn"));
 			sendPluginInfo("		Mooshroom: "+getWLKey("Animals", "Mooshroom", "spawn"));
 			sendPluginInfo("		Sheep: "+getWLKey("Animals", "Sheep", "spawn"));
 			sendPluginInfo("		Slime: "+getWLKey("Animals", "Slime", "spawn"));
@@ -71,6 +72,7 @@ public class PluginIO{
 			sendPluginInfo("	ANIMALS:");
 			sendPluginInfo("		Chicken: "+getWLKey("Animals", "Chicken", "age"));
 			sendPluginInfo("		Cow: "+getWLKey("Animals", "Cow", "age"));
+            sendPluginInfo("        Horse: "+getWLKey("Animals", "Horse", "age"));
 			sendPluginInfo("		Mooooshrooooom: "+getWLKey("Animals", "Mooshroom", "age"));
 			sendPluginInfo("		Sheep: "+getWLKey("Animals", "Sheep", "age"));
 			sendPluginInfo("		Slime: "+getWLKey("Animals", "Slime", "age"));
@@ -136,6 +138,7 @@ public class PluginIO{
             sender.sendMessage("    ANIMALS:");
             sender.sendMessage("        Chicken: "+getWLKey("Animals", "Chicken", "spawn"));
             sender.sendMessage("        Cow: "+getWLKey("Animals", "Cow", "spawn"));
+            sender.sendMessage("        Horse: "+getWLKey("Animals", "Horse", "spawn"));
             sender.sendMessage("        Mooshroom: "+getWLKey("Animals", "Mooshroom", "spawn"));
             sender.sendMessage("        Sheep: "+getWLKey("Animals", "Sheep", "spawn"));
             sender.sendMessage("        Slime: "+getWLKey("Animals", "Slime", "spawn"));
@@ -159,6 +162,7 @@ public class PluginIO{
             sender.sendMessage("    ANIMALS:");
             sender.sendMessage("        Chicken: "+getWLKey("Animals", "Chicken", "age"));
             sender.sendMessage("        Cow: "+getWLKey("Animals", "Cow", "age"));
+            sender.sendMessage("        Horse: "+getWLKey("Animals", "Horse", "age"));
             sender.sendMessage("        Mooooshrooooom: "+getWLKey("Animals", "Mooshroom", "age"));
             sender.sendMessage("        Sheep: "+getWLKey("Animals", "Sheep", "age"));
             sender.sendMessage("        Slime: "+getWLKey("Animals", "Slime", "age"));
@@ -174,6 +178,7 @@ public class PluginIO{
 	
    public static boolean getWhiteListVal(Entity ent, String type){
         String monster = "Monsters", animal = "Animals";
+
         switch (ent.getType().getTypeId()) {
             case 50: return getWLKey(monster, "Creeper", type);
             case 51: return getWLKey(monster, "Skeleton", type);
@@ -199,8 +204,9 @@ public class PluginIO{
             case 97: return false; //Snow Golem
             case 98: return getWLKey(animal, "Ocelot", type);
             case 99: return getWLKey(animal, "IronGolem", type);
+            case 100: return getWLKey(animal, "Horse", type);
             case 120: return getWLKey(animal, "Villager", type);
-            default:return false;
+            default:return true;
         }
     }
    

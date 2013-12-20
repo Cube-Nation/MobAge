@@ -39,7 +39,8 @@ public class MobAge extends JavaPlugin {
         saveWhitelist();
         if(config.getBoolean("Debug.onStartup")) PluginIO.debugStartup();
         
-        long delay = PluginIO.toTicks(config.getDouble("Age_Check_delay"));
+        long delay = PluginIO.toTicks(config.getDouble("Age_Check_Delay"));
+        PluginIO.sendPluginInfo("Starting age check task with delay: " + delay);
         try{
             getServer().getScheduler().scheduleSyncRepeatingTask(this, killOldMobstask, 10L, delay);
         }catch(IllegalAccessError e){
@@ -349,6 +350,7 @@ public class MobAge extends JavaPlugin {
         if(entityname.equalsIgnoreCase("ocelot")) return "Whitelist.Animal.Ocelot";
         if(entityname.equalsIgnoreCase("pig")) return "Whitelist.Animal.Pig";
         if(entityname.equalsIgnoreCase("sheep")) return "Whitelist.Animal.Sheep";
+        if(entityname.equalsIgnoreCase("horse")) return "Whitelist.Animal.Horse";
         if(entityname.equalsIgnoreCase("slime")) return "Whitelist.Animal.Slime";
         if(entityname.equalsIgnoreCase("squid")) return "Whitelist.Animal.Squid";
         if(entityname.equalsIgnoreCase("villager")) return "Whitelist.Animal.Villager";
